@@ -116,3 +116,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+/*function sendToClarifi(link){
+  $.ajax({
+  type: "GET",
+  url: "https://api.clarifai.com/v1/tag/?" + link,
+  beforeSend : function( xhr ) {
+            xhr.setRequestHeader( 'Authorization', 'BEARER Y6XXIoyeGyaU6b97aAxtHL2xlVhdfD' );
+        }
+  success: function(response){
+    console.log(response.status_code);  
+  },
+  dataType: "json"
+});
+}
+*/
