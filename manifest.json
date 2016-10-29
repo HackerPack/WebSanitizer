@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "WebSanitizer",
+  "description": "Filter out adult and violent content from page",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "64": "icon.png"
+  },
+    "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      // "css": ["mystyles.css"],
+      // "js": ["jquery.js", "myscript.js"]
+      "js": ["myscript.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
