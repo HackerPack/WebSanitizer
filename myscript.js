@@ -89,7 +89,7 @@ function sendToClarifi(link){
   $.ajax({
   type: "GET",
   //url: "https://api.clarifai.com/v1/tag/?url=" + link+'&access_token=3MdWoUytY3a3QuXxdBl7oRkwqyql7A',
-  url: "https://api.clarifai.com/v1/tag/?url=" + link+'&access_token=OYr34p8u15BmBQhSwNUJozU9jvijF0',
+  url: "https://api.clarifai.com/v1/tag/?url=" + link+'&access_token=7RrbcxdQkZduFcfi5KwmmDKZxzOYVC',
   success: function(data){
   	//console.log(response.results[0].result.tag.classes);
 	//alert("success: "+data.results[0].result.tag.classes);
