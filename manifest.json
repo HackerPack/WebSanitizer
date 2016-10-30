@@ -3,7 +3,7 @@
   "name": "My Cool Extension",
   "version": "0.1",
   "background": {
-    "scripts": ["jquery-3.1.1.min.js", "myscript.js"]
+    "scripts": ["jquery-2.2.4.min.js", "myscript.js"]
     },
   "permissions": [
    "<all_urls>","webRequest","webRequestBlocking"
