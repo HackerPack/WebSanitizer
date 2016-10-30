@@ -1,21 +1,21 @@
-function loadTxtFile(callback) {   
-	var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "http://localhost:2000/bad-words.txt/", true);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            var text = rawFile.responseText;
-        }
-    }
+// function loadTxtFile(callback) {   
+// 	var rawFile = new XMLHttpRequest();
+//     rawFile.open("GET", "http://localhost:2000/bad-words.txt/", true);
+//     rawFile.onreadystatechange = function ()
+//     {
+//         if(rawFile.readyState === 4)
+//         {
+//             var text = rawFile.responseText;
+//         }
+//     }
 
-    rawFile.send();
-}  
+//     rawFile.send();
+// }  
 
-var badwords = {}
-loadTxtFile(function (text) {
-	console.log(text)
-})
+// var badwords = {}
+// loadTxtFile(function (text) {
+// 	console.log(text)
+// })
 //var badWords = text.split("\n");
 
 var badDict = {}

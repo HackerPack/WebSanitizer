@@ -7,7 +7,7 @@
       "matches": [
         "<all_urls>"
       ],
-      "js": ["jquery-3.1.1.min.js", "myscript.js"]
+      "js": ["jquery-3.1.1.min.js", "bad_words.js", "myscript.js"]
     }
   ],
   "permissions": [
