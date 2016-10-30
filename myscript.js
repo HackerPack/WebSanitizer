@@ -4,7 +4,8 @@ chrome.webRequest.onBeforeRequest.addListener(
 			var url = details.url;
 			var valval = sendToClarifi(url);
 			//alert("woohooo: "+valval);
-			if((details.url.indexOf("images")!= -1 || details.url.indexOf("jpg")!= -1 || details.url.indexOf("png")!= -1) && valval){
+			// if((details.url.indexOf("images")!= -1 || details.url.indexOf("jpg")!= -1 || details.url.indexOf("png")!= -1) && valval){
+			if(valval){
 				//alert("URL22");
 				url = "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif";
 			}
