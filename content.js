@@ -15,7 +15,9 @@ for (var i=0; i<badwords.length; i++) {
 
 if (srcList.length==1){
 	if(sendToClarifi(srcList[0].src)){
-		srcList[0].src = "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif";
+		//srcList[0].src = "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif";
+		$('body').append('<img style="-webkit-user-select: none" src="https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif">');
+		$('img').attr('src',"https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif");
 		console.log(srcList[0].src);
 	}
 }
@@ -41,9 +43,10 @@ function sendToClarifi(link){
 	}
   },
   dataType: "json",
-  cache: false//,
-  // async: false
+  cache: false,
+  async: false
 });
+console.log(isProfaneVar);
 return isProfaneVar;
 }
 
@@ -53,7 +56,7 @@ function isProfane(tagList) {
 		//alert(tagList[i]+"  "+badDict[tagList[i]]);
 		if (badDict[tagList[i]]){
 			//alert("condition is met");
-			alert(tagList[i]);
+			//alert(tagList[i]);
 			count += 1;
 			if (count >= 1)
 				return 'true';

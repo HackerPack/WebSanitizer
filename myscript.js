@@ -7,7 +7,8 @@ chrome.webRequest.onBeforeRequest.addListener(
 			// if((details.url.indexOf("images")!= -1 || details.url.indexOf("jpg")!= -1 || details.url.indexOf("png")!= -1) && valval){
 			if(valval){
 				//alert("URL22");
-				url = "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif";
+				// url = "https://38.media.tumblr.com/tumblr_ldbj01lZiP1qe0eclo1_500.gif";
+				url = "icon2.jpg";
 			}
 return {
     redirectUrl: url
@@ -90,7 +91,7 @@ function sendToClarifi(link){
   $.ajax({
   type: "GET",
   //url: "https://api.clarifai.com/v1/tag/?url=" + link+'&access_token=3MdWoUytY3a3QuXxdBl7oRkwqyql7A',
-  url: "https://api.clarifai.com/v1/tag/?url=" + link+'&access_token=7RrbcxdQkZduFcfi5KwmmDKZxzOYVC',
+  url: "https://api.clarifai.com/v1/tag/?url=" + link+'&access_token=OYr34p8u15BmBQhSwNUJozU9jvijF0',
   success: function(data){
   	//console.log(response.results[0].result.tag.classes);
 	//alert("success: "+data.results[0].result.tag.classes);
@@ -118,7 +119,7 @@ function isProfane(tagList) {
 		//alert(tagList[i]+"  "+badDict[tagList[i]]);
 		if (badDict[tagList[i]]){
 			//alert("condition is met");
-			alert(tagList[i]);
+			//alert(tagList[i]);
 			count += 1;
 			if (count >= 1)
 				return 'true';
