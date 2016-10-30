@@ -1,27 +1,30 @@
 function loadTxtFile(callback) {   
 	var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "http://localhost:2000/bad-words.txt/", true);
+	//rawFile.overrideMimeType("application/txt");
+    rawFile.open("GET", "https://raw.githubusercontent.com/ShashwathKumar/WebSanitizer/master/bad-words.txt", false);
     rawFile.onreadystatechange = function ()
     {
-        if(rawFile.readyState === 4)
+        if(rawFile.readyState == 4 && rawFile.status == "200")
         {
             var text = rawFile.responseText;
+            callback(rawFile.responseText);
         }
     }
 
-    rawFile.send();
+    rawFile.send(null);
 }  
 
-var badwords = {}
-loadTxtFile(function (text) {
-	console.log(text)
-})
-//var badWords = text.split("\n");
 
-var badDict = {}
-for (var i=0; i<badWords.length; i++) {
-	badDict[badWords[i]] = true;
-}
+var badDict = {};
+var badwords = {};
+loadTxtFile(function (text) {
+	badwords = text.split('\n');
+	for (var i=0; i<badwords.length; i++) {
+	badDict[badwords[i]] = true;
+	}
+	console.log(badDict);
+});
+//var badWords = text.split("\n");
 
 var srcList = $('img').get();
 
@@ -32,7 +35,7 @@ console.log(srcList);
 // }, 5000);
 
 for (var i=0;i<srcList.length;i++) {
-	console.log(srcList[i]);
+	//console.log(srcList[i]);
 	sendToClarifi(srcList[i].src);
 }
 //sendToClarifi('https://drscdn.500px.org/photo/155841899/q%3D80_m%3D1500/65a62d508837176ed2b6eae08943980d');
@@ -43,8 +46,11 @@ function sendToClarifi(link){
   //url: "https://api.clarifai.com/v1/tag/?url=" + link+'&access_token=3MdWoUytY3a3QuXxdBl7oRkwqyql7A',
   url: "https://api.clarifai.com/v1/tag/?url=" + link+'&access_token=3MdWoUytY3a3QuXxdBl7oRkwqyql7A',
   success: function(response){
-    if (isProfane(response.results[0].result.tag.classes))
+  	//console.log(response.results[0].result.tag.classes);
+    if (isProfane(response.results[0].result.tag.classes)){
     	console.log("PROFANE");
+    	console.log(link);
+    }
     else
     	console.log("NOT PROFANE")
   },

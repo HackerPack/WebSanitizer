@@ -1394,3 +1394,9 @@ offense
 liquor
 alcohol
 wine
+gun
+guns
+weapons
+weapon
+crime
+war
